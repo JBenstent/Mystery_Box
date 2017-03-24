@@ -1,0 +1,30 @@
+
+
+<h1>Others who added <%= @song_info.artist%>-<%= @song_info.title %></h1>
+
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Times Added</th>
+  </tr>
+  <% @preview_song.each do |val| %>
+  <% val.users_playlists.each do |item| %>
+  <tr>
+    <td>
+      <a href="/profile/<%=item.id%>"><%= item.first_name %></a>
+    </td>
+    <td>
+      <%= @counter %>
+
+    </td>
+  </tr>
+  <% end%>
+  <%end%>
+</table>
+
+
+
+
+<a href="/songs">Dashboard</a>
+<a href="/logout">Logout</a>

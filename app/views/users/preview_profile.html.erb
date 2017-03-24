@@ -1,0 +1,26 @@
+<h2><%=session[:user]['first_name']%> <%=session[:user]['last_name']%>'s Playlist</h2>
+<a href="/songs">Dashboard</a>
+<a href="/logout">Logout</a>
+
+<table>
+  <tr>
+    <th>Artist</th>
+    <th>Title</th>
+    <th>Times Added</th>
+  </tr>
+
+<% @user.each do |item| %>
+  <% @all_songs_1.each do |like| %>
+    <% item.songs_added.each do |item|  %>
+      <tr>
+        <td><%= item.artist %></td>
+        <td><%= item.title %></td>
+        <td>
+          <%=like.users_playlists.count%>
+        </td>
+      </tr>
+    <%end%>
+  <%end%>
+<%end%>
+
+</table>
